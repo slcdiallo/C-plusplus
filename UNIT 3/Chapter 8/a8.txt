@@ -1,0 +1,14 @@
+	for (k = 1; k < Number; k++) 
+	{
+		int i;
+		for (int i = 1; i < Number; i++) 
+		{
+			if (Concepts[i - 1].compare(Concepts[i]) > 0) 
+			{
+				temp = Concepts[i - 1];
+				Concepts[i - 1] = Concepts[i];
+				Concepts[i] = temp;
+			}
+		}
+	}
+}

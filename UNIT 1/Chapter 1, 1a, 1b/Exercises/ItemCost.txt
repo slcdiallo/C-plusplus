@@ -1,0 +1,10 @@
+Jason typically uses the Internet to buy various items. If the total cost of the items ordered, at one time, is $200 or more, then the shipping and handling is free; otherwise, the shipping and handling is $10 per item. Design an algorithm that prompts Jason to enter the number of items ordered and the price of each item. The algorithm then outputs the total billing amount. Your algorithm must use a loop (repetition structure) to get the price of each item. (For simplicity, you may assume that Jason orders no more than five items at a time.)
+
+Algorithm:
+
+Input number of items ordered: numItems (max 5 items)
+Input price of each item: priceEachItem
+	shippingHandling = 10 * numItems
+	costItems = numItems * priceEachItem
+	if costItems >= 200 (shippingHandling = 0; totalCost = costItems)
+	else totalCost = costItems + shippingHandling

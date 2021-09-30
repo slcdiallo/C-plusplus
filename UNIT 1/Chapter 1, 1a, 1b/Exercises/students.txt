@@ -1,0 +1,25 @@
+You are given a list of students' names and their test scores. Design an algorithm that does the following:
+
+a. Calculates the average test scores.
+	Get testScore
+	sumTestScores = sum of all test scores
+	numTest = Number of Tests
+	averageTestScore = sumTestScores / numTest
+
+b. Determines and prints the names of all the students whose test scores are below the average test score.
+	get a testScore
+	if testScore < averageTestScore 
+	print studentName
+
+c. Determines the highest test score.
+	Get student test score and call it hightestTestScore
+	Repeat
+	testScore
+	if testScore > hightestTestScore
+	highestTestScore = testScore
+
+d. Prints the names of all the students whose test scores are the same as the highest test score. 
+	Get studentName
+	Get testScore
+	if testScore = hightestTestScore
+	print studentName

@@ -1,0 +1,75 @@
+//copy the code and run it
+//comments are provided within the code
+
+//Note: if have any problem in understanding then fell free to
+//comment in the comment section
+
+
+#include<iostream>
+#include<stdlib.h>
+#include<string>
+#include<fstream>
+#include<math.h>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+   //FREOPEN is used for reading a file
+   //this simply redirects file to the stdin
+   freopen("Grades.txt","r",stdin);
+  
+   string name;
+   float test1_marks,test2_marks;
+
+
+   cout<<"STUDENT STATISTICS:"<<endl<<endl;
+   cout<<setw(10)<<left<<"Name"<<setw(10)<<"Total";
+   cout<<setw(10)<<"Numeric"<<setw(10)<<"Letter"<<endl;
+   cout<<setw(10)<<""<<setw(10)<<"Points";
+   cout<<setw(10)<<"Grade"<<setw(10)<<"Grade"<<endl;
+  
+   //for caculating the total number of records read
+   int number = 0;
+  
+   float total=0,min=100,max=0;
+   //FOR READING ALL THE DETAILS FROM THE FILE
+   while(cin>>name){
+       char grade;
+       cin>>test1_marks>>test2_marks;
+      
+       float total_points = test2_marks+test1_marks;
+      
+       //set the numeric grade value
+       float numeric_grade = total_points/2;
+      
+       //for setting max value  
+       if(numeric_grade>max)max=numeric_grade;
+
+       //set the minimum value;
+       if(numeric_grade<min)min=numeric_grade;
+      
+       total+=numeric_grade;
+
+       if(numeric_grade>=90)grade='A';
+       else if(numeric_grade>=80 && numeric_grade<90)grade='B';
+       else if(numeric_grade>=70 && numeric_grade<80)grade='C';
+       else if(numeric_grade>=60 && numeric_grade<70)grade='D';
+       else if(numeric_grade>=0 && numeric_grade<60)grade='F';
+
+       cout<<setw(10)<<name<<setw(10)<<fixed<<setprecision(2)<<total_points;
+       cout<<setw(10)<<fixed<<setprecision(2)<<numeric_grade<<setw(10)<<grade<<endl;
+       number++;
+   }
+  
+   //average = total/number;
+   float average = total/number;
+
+   cout<<"CLASS STATISTICS:"<<endl<<endl;
+   cout<<"Number:"<<setw(10)<<number<<endl;
+
+   cout<<"Average:"<<setw(10)<<fixed<<setprecision(2)<<(average)<<endl;
+   cout<<"Minimum:"<<setw(10)<<fixed<<setprecision(2)<<min<<endl;
+   cout<<"Maximum:"<<setw(10)<<fixed<<setprecision(2)<<max<<endl;
+   return 0;
+}

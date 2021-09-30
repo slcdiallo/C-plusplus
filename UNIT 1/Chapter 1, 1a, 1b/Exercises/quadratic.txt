@@ -1,0 +1,17 @@
+Design an algorithm to find the real roots of a quadratic equation of the form ax^2 + bx + c , where a, b, and c are real numbers, and a is nonzero. 
+
+Algorithm:
+
+	Get a
+	Get b
+	Get c 
+	v = square root of
+	
+	w = b*b - 4*a*c
+
+	if w < 0 
+	print 'No Real Roots'
+	if w = 0
+	roots = -b/(2a)
+	if w > 0
+	roots = (-b-v(w))/(2a) , (-b+v(w))/(2a)

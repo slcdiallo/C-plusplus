@@ -1,0 +1,34 @@
+#include<iostream>
+#include <iomanip>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{	//Declare variables to manipulate data
+	string name;
+	double testScore;
+	char grade = ' ';
+	int count = 0;
+	double sum = 0;
+	//Declare stream variable
+	ifstream inFile;
+	
+	//Open input file
+	inFile.open("students.txt");
+	//if (!inFile)
+	//{
+		//cout << "Cannot open input file. "
+			//<< "Program terminates!" << endl;
+		//return 1;
+	//}
+
+	cout << "STUDENT STATISTICS:" << endl << endl;
+	cout << setw(10) << left << "Student" << setw(10) << "Total";
+	cout << setw(10) << "Numeric" << setw(10) << "Letter" << endl;
+	cout << setw(10) << left << "Name" << setw(10) << "Points";
+	cout << setw(10) << "Grade" << setw(10) << "Grade" << endl;
+
+	return 0;
+}

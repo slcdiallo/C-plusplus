@@ -1,0 +1,8 @@
+Problem: Find weighted average of four test scores.
+
+Algorithm: 
+1. Get each test score (testScore1, testScore2, testScore3, testScore4)
+2. Get its weight (weightTestScore1, weightTestScore2, weightTestScore3, weightTestScore4)
+3. Calculate Weighted Average which is the sum of the each test score multiply by its own weight
+	weightedAverage = testScore1 * weightTestScore1 + testScore2 * weightTestScore2 + testScore3 * weightTestScore3 + testScore4 * weightTestScore4
+

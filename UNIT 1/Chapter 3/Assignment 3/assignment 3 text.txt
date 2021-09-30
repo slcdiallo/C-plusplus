@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+const double PI = 3.14;
+
+int main()
+{
+    int Number;
+    float AreaSquare;
+    float AreaRectangle; 
+    float AreaCircle;
+    int Length;
+    cout << "What is your favorite number" << endl;
+    cin >> Number;
+    cout << endl;
+    AreaSquare = pow(Number, 2);
+    Length = 2*Number;
+    AreaRectangle = Number*Length;
+    AreaCircle = PI * pow(Number, 2);
+  
+
+    cout << "I have used your favorite number in some geometric formula : " << endl;
+    cout << "what " << setw(50) << left << Number;
+    cout << setw(7) << right << setfill('_') << AreaSquare << endl;
+    cout << setw(50) << left << "Shape " << setw(7) << left << "Area" << endl;
+    cout << fixed << setprecision(2);
+    cout << setw(50) << left << setfill(' ') << "Square with side " + to_string(Number);
+    cout << setw(7) << right << setfill('_') << AreaSquare << endl;
+    cout << setw(50) << left << setfill(' ') << "Circle with radius " + to_string(Number);
+    cout << setw(7) << right << setfill('_') << AreaCircle << endl;
+    cout << setw(50) << left << setfill(' ') << "Rectangle with width " + to_string(Number) + " and length " + to_string(Length);
+    cout << setw(7) << right << setfill('_') << AreaRectangle << endl;
+
+    return 0;
+}
+

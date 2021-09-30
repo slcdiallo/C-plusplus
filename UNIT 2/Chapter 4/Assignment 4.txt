@@ -1,0 +1,205 @@
+ASSIGNMENT 4:
+
+// Assignment4.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+
+int main()
+{
+    //Variable decleration
+    double amountDue;
+    amountDue = 5;
+    int B, C, M, V, S;
+    string breadOption;
+    string cheeseOption;
+    string meatOption;
+    string veggieOption;
+    string sideOption;
+
+    //OUTPUT MENU
+    cout << "Bread" << endl;
+    cout << "\n1 Wheat";
+    cout << "\n2 Sourdough";
+    cout << "\n3 Italian";
+    cout << "\n4 White";
+    cout << "\n5 Multigrain";
+    cout << endl;
+
+    cout << "\nCheese" << endl;
+    cout << "\n1 Mozzarella";
+    cout << "\n2 Cheddar";
+    cout << "\n3 Swiss";
+    cout << "\n4 Provolone";
+    cout << "\n5 Monterey Jack";
+    cout << "\n6 Goat Cheese";
+    cout << endl;
+
+    cout << "\nMeat" << endl;
+    cout << "\n1 Chicken";
+    cout << "\n2 Turkey";
+    cout << "\n3 Roast Beef";
+    cout << "\n4 Bacon";
+    cout << "\n0 None";
+    cout << endl;
+
+    cout << "\nVeggie" << endl;
+    cout << "\n1 Mushrooms";
+    cout << "\n2 Olives";
+    cout << "\n3 Spinach";
+    cout << "\n4 Peppers";
+    cout << "\n5 Onions";
+    cout << "\n0 None";
+    cout << endl;
+
+    cout << "\nSide" << endl;
+    cout << "\n1 Fries";
+    cout << "\n2 Chips";
+    cout << "\n3 Salad";
+    cout << "\n4 Coleslaw";
+    cout << "\n5 Tomato Soup";
+    cout << "\n0 None";
+    cout << endl;
+
+    //OUTPUT MESSAGE TO LET USER PICK OPTION IN CATEGORY
+    cout << "\nEnter your choice for BREAD:";
+    cout << "\n1 for Wheat, 2 for Sourdough, 3 for Italian, 4 for White, 5 for Multigrain" << endl;
+    //INPUT BREAD OPTION
+    cin >> B;
+    cout << B << endl;
+   
+    cout << "\nEnter your choice for CHEESE:";
+    cout << "\n1 for Mozzarella, 2 Cheddar, 3 for Swiss, 4 for Provolone, 5 for Monterey Jack, 6 for Goat Cheese" << endl;
+    //INPUT CHEESE OPTION
+    cin >> C;
+    cout << C << endl;
+
+    cout << "\nEnter your choice for MEAT:";
+    cout << "\n1 for Chicken, 2 for Turkey, 3 for Roast Beef, 4 for Bacon, 0 for NONE" << endl;
+    //INPUT MEAT OPTION
+    cin >> M;
+    cout << M << endl;
+
+    cout << "\nEnter your choice for VEGGIE:";
+    cout << "\n1 for Mushrooms, 2 for Olives, 3 for Spinach, 4 for Peppers, 5 for Onion, 0 for NONE" << endl;
+    //INPUT VEGGIE OPTION
+    cin >> V;
+    cout << V << endl;
+
+    cout << "\nEnter your choice for SIDE:";
+    cout << "\n1 for Fries, 2 for Chips, 3 for Salad, 4 for Coleslaw, 5 for Tomato, 0 for NONE" << endl;
+    //INPUT SIDE OPTION
+    cin >> S;
+    cout << S << endl;
+
+    //SWITCH STATEMENT to give the computer the power to choose from among many alternatives
+    switch (B)
+    {
+    case 1: breadOption = "Wheat";
+        break;
+    case 2: breadOption = "Sourdough";
+        break;
+    case 3: breadOption = "Italian";
+        break;
+    case 4: breadOption = "White";
+    case 5: breadOption = "Multigrain";
+        break;
+    }
+
+    switch (C)
+    {
+    case 1: cheeseOption = "Mozarella";
+        break;
+    case 2: cheeseOption = "Cheddar";
+        break;
+    case 3: cheeseOption = "Swiss";
+        break;
+    case 4: cheeseOption = "Provolone";
+        break;
+    case 5: cheeseOption = "Monterey Jack";
+        break;
+    case 6: cheeseOption = "Goat Cheese";
+        break;
+    }
+
+    switch (M)
+    {
+    case 1: meatOption = " Chicken";
+        break;
+    case 2: meatOption = " Turkey";
+        break;
+    case 3: meatOption = " Roast Beef";
+        break;
+    case 4: meatOption = " Bacon";
+        break;
+    case 5: meatOption = " None";
+        break;
+    }
+
+    switch (V)
+    {
+    case 1: veggieOption = " Mushrooms";
+        break;
+    case 2: veggieOption = " Olives";
+        break;
+    case 3: veggieOption = " Spinach";
+        break;
+    case 4: veggieOption = " Peppers";
+        break;
+    case 5: veggieOption = " Onion";
+        break;
+    case 6: veggieOption = " None";
+        break;
+    }
+
+    switch (S)
+    {
+    case 1: sideOption = " and Fries.";
+        break;
+    case 2: sideOption = " and Chips.";
+        break;
+    case 3: sideOption = " and Salad.";
+        break;
+    case 4: sideOption = " and Coleslaw.";
+        break;
+    case 5: sideOption = " and Tomato Soup.";
+        break;
+    case 6: sideOption = "None";
+        break;
+    }
+
+    //OUTPUT MESSAGE TO REMIND USER OF THE ORDER PLACED
+    cout << "You ordered a grilled cheese on " << breadOption << " bread with " << cheeseOption;
+    
+    if (M != 0)
+    {
+        cout << "," << meatOption;
+        amountDue = amountDue + 2;
+    }
+    //USE IF STATEMENT FOR LOGICAL EXPRESSION
+    //CALCULATE TOTAL COST
+    if (V != 0)
+    {
+        cout << "," << veggieOption;
+        amountDue = amountDue + 1;
+    }
+
+    if (S != 0)
+    {
+        cout << "," << sideOption;
+        amountDue = amountDue + 2;
+    }
+    //OUTPUT SENTENCE WITH THE COST 
+    cout << "\nYour balance is: $" << amountDue;
+
+
+    return 0;
+
+}
+
+

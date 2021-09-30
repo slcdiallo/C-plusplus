@@ -1,0 +1,19 @@
+An ATM allows a customer to withdraw a maximum of $500 per day. If a customer withdraws more than $300, the service charge is 4% of the amount over $300. If the customer does not have sufficient money in the account, the ATM informs the customer about the insufficient funds and gives the customer the option to withdraw the money for a service charge of $25.00. If there is no money in the account or if the account balance is negative, the ATM does not allow the customer to withdraw any money. If the amount to be withdrawn is greater than $500, the ATM informs the customer about the maximum amount that can be withdrawn. Write an algorithm that allows the customer to enter the amount to be withdrawn. The algorithm then checks the total amount in the account, dispenses the money to the customer, and debits the account by the amount withdrawn and the service charges, if any.
+
+Algorithm:
+
+Get balance in the account
+Input amount to be withdrawn: amounttobeWithdrawn
+Available amount in account = availableAmount
+	If availabeAmount < amounttobeWithdrawn print 'You are not allowed to withdraw at this moment'
+	If availableAmount <= 0 print 'You are not allowed to withdraw at this moment'
+	If amounttobeWithdrawn >= 500 print 'You are not allowed to withdraw more than $500 per day'
+	If amounttobeWithdrawn >= 300 
+		charges = (amounttobewithdrawn - 300) * 0.04
+		totalAmount = charges + amounttobewithdrawn
+	If amounttobeWithdrawn < 300 
+		charges = 25
+		totalAmount = charges + amounttobeWithdrawn
+	
+
+	

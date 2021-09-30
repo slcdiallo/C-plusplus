@@ -1,0 +1,12 @@
+Problem: Given the radius, in inches, and price of a pizza, design an algorithm to find the price of the pizza per square inch
+
+Algorithm:
+Radius given
+Price given
+1. Find Area of a Pizza
+      area = 3.14 * (r)^2
+2. Find the price per square inch by dividing the price with the area of the pizza
+ 	pricePsi: Price per square inch
+	price: Price of a pizza
+		pricePsi = price / area
+

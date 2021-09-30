@@ -1,0 +1,129 @@
+// SaliouDiallo-Assignment8.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+void ReadConcepts(string Concepts[100], int& Number)
+{
+	ifstream infile;
+	infile.open("LIST.txt");
+	while (getline(infile, Concepts[Number++]));
+	infile.close();
+}
+
+void PrintConcepts(string Concepts[100], int Number)
+{
+	int k;
+	for (k = 0; k < Number; k++)
+		cout << Concepts[k] << endl;
+	cout << endl << endl;
+}
+
+void SortConcepts(string Concepts[100], int Number)
+{
+	int index;
+	int smallestIndex;
+	string str;
+
+	for (index = 0; index < Number - 1; index++)
+	{
+		int smallestIndex = index;
+		str = Concepts[index];
+		for (int j = index + 1; j < Number; j++)
+		{
+			int k = 0; 
+			while (str[k] != '\0' && Concepts[j][k] != '\0' && str[k] == Concepts[j][k])
+			{
+				k++;
+			}
+			if (str[k] == '\0')
+			{
+				str = Concepts[j]; smallestIndex = j;
+			}
+			else
+			{
+				if (str[k] - Concepts[j][k] < 0)
+				{
+					str = Concepts[j]; smallestIndex = j;
+				}
+			}
+		}
+		if (smallestIndex != index)
+		{
+			string temp = Concepts[index];
+			Concepts[index] = Concepts[smallestIndex];
+			Concepts[smallestIndex] = temp;
+		}
+	}
+}
+
+int main()
+{
+	string Concepts[100];
+	int Number;
+	ReadConcepts(Concepts, Number);
+	PrintConcepts(Concepts, Number);
+	SortConcepts(Concepts, Number);
+	PrintConcepts(Concepts, Number);
+
+	return 0;
+}
+// SaliouDiallo-Assignment8.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string.h>
+#include <fstream>
+#include <string>
+using namespace std;
+
+void ReadConcepts(string Concepts[100], int& Number) 
+{
+	ifstream infile;
+	infile.open("LIST.txt");
+	if (infile.is_open()) 
+	{
+		string line;
+		while (Number < 100 && getline(infile, line))
+		{
+			cout << line << endl;
+			Concepts[Number] = line;
+			Number += 1;
+		}
+	}
+}
+
+// function to print the lines one at a time from th arrya.
+void PrintConcepts(string Concepts[100], int Number) {
+	cout << "***************************************************\n";
+	for (int i = 0; i < Number; i++) {
+		cout << Concepts[i] << endl;
+	}
+}
+
+// function to Sort the array of strings using simple buble sort algorithm .
+void SortConcepts(string Concepts[100], int Number) {
+	string temp;
+	for (int i = 1; i < Number; i++) {
+		for (int j = 1; j < Number; j++) {
+			if (Concepts[j - 1].compare(Concepts[j]) > 0) {
+				temp = Concepts[j - 1];
+				Concepts[j - 1] = Concepts[j];
+				Concepts[j] = temp;
+			}
+		}
+	}
+}
+
+int main() {
+	string Concepts[100];
+	int Number = 0;
+	ReadConcepts(Concepts, Number);
+	PrintConcepts(Concepts, Number);
+	SortConcepts(Concepts, Number);
+	PrintConcepts(Concepts, Number);
+}

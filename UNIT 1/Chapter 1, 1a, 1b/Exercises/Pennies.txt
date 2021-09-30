@@ -1,0 +1,12 @@
+Problem: Algorithm to convert the change given in quarters, dimes, nickels, and pennies into pennies
+
+Algorithm: 
+
+1. Get the numbers of quarters in the change.
+   There are 25 pennies in a quarter.Therefore convert the quarters into pennies by multiplying them by 25.
+2. Get the numbers of dimes in the change
+   There are 10 pennies in a dime.Therefore convert the dimes into pennies by multiplying them by 10
+3. Get the numbers of nickels in the change
+   There 5 pennies in a nickel.Therefore convert the nickels into pennies by multiplying them by 5
+4. Calculate the sum of, the calculated pennies from the quarters, dimes, nickels, and the pennies that were    already in the change.
+	Pennies = Q*25+D*10+N*5+P
